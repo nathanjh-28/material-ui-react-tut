@@ -13,6 +13,10 @@ import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
   root: {
@@ -73,53 +77,63 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Container maxWidth="xs">
 
-      <div className="App">
-        <header className="App-header">
-          <Typography variant="h2">
-            Welcome to MUI
-          </Typography>
-          <Typography variant="subtitle1" component="div">
-            Learn how to use Material UI
-          </Typography>
-          <ButtonStyled />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            type="email"
-            label="Email"
-            placeholder="test@test.com"
-          />
-          <CheckboxExample />
-          <ButtonGroup color="primary">
+        <div className="App">
+          <header className="App-header">
 
-            <Button
-              startIcon={<SaveIcon />}
-              // endIcon={<SaveIcon />}
-              // onClick={() => alert('hello')}
-              // size="large"
-              // style={{fontSize: 48}}
-              href='#'
-              variant="contained"
-              color="primary"
-            >
-              Save
-        </Button>
-            <Button
-              startIcon={<DeleteIcon />}
-              size="large"
+            <Typography variant="h2">
+              Welcome to MUI
+          </Typography>
+            <Typography variant="subtitle1" component="div">
+              Learn how to use Material UI
+          </Typography>
+            <ButtonStyled />
+            {/* <TextField
+              variant="outlined"
               color="secondary"
-              variant="contained"
+              type="email"
+              label="Email"
+              placeholder="test@test.com"
+            /> */}
+            <Grid container spacing={2} justify="center">
+              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+            </Grid>
+            <CheckboxExample />
+            <ButtonGroup color="primary">
 
-            >
-              Discard
+              <Button
+                startIcon={<SaveIcon />}
+                // endIcon={<SaveIcon />}
+                // onClick={() => alert('hello')}
+                // size="large"
+                // style={{fontSize: 48}}
+                href='#'
+                variant="contained"
+                color="primary"
+              >
+                Save
         </Button>
-          </ButtonGroup>
+              <Button
+                startIcon={<DeleteIcon />}
+                size="large"
+                color="secondary"
+                variant="contained"
+
+              >
+                Discard
+        </Button>
+            </ButtonGroup>
 
 
 
-        </header>
-      </div>
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
