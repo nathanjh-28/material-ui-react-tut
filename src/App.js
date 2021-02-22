@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
@@ -11,6 +10,9 @@ import TextField from '@material-ui/core/TextField'
 
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { green, orange } from '@material-ui/core/colors'
+import 'fontsource-roboto';
+
+import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles({
   root: {
@@ -68,6 +70,12 @@ function App() {
 
       <div className="App">
         <header className="App-header">
+          <Typography variant="h2">
+            Welcome to MUI
+          </Typography>
+          <Typography variant="subtitle1" component="div">
+            Learn how to use Material UI
+          </Typography>
           <ButtonStyled />
           <TextField
             variant="outlined"
