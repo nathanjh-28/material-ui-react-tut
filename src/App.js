@@ -18,6 +18,11 @@ import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #ff6b6b, #ffab6b)',
@@ -35,14 +40,14 @@ const theme = createMuiTheme({
       marginBottom: 15,
     }
   },
-  palette: {
-    primary: {
-      main: green[500],
-    },
-    secondary: {
-      main: orange[500],
-    }
-  }
+  // palette: {
+  //   primary: {
+  //     main: green[500],
+  //   },
+  //   secondary: {
+  //     main: orange[500],
+  //   }
+  // }
 })
 
 function ButtonStyled() {
@@ -81,6 +86,17 @@ function App() {
 
         <div className="App">
           <header className="App-header">
+            <AppBar color="secondary">
+              <Toolbar>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6">
+                  <Button>Login</Button>
+                </Typography>
+              </Toolbar>
+
+            </AppBar>
 
             <Typography variant="h2">
               Welcome to MUI
@@ -97,11 +113,11 @@ function App() {
               placeholder="test@test.com"
             /> */}
             <Grid container spacing={2} justify="center">
-              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
-              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
-              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
-              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
-              <Grid item><Paper style={{ height: 75, width: 50, }}></Paper></Grid>
+              <Grid item xs={12} sm={6}><Paper style={{ height: 75, width: '100%', }}></Paper></Grid>
+              <Grid item xl={3}><Paper style={{ height: 75, width: '100%', }}></Paper></Grid>
+              <Grid item xl={3}><Paper style={{ height: 75, width: '100%', }}></Paper></Grid>
+              <Grid item xl={3}><Paper style={{ height: 75, width: '100%', }}></Paper></Grid>
+
             </Grid>
             <CheckboxExample />
             <ButtonGroup color="primary">
