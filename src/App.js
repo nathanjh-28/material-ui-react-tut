@@ -7,17 +7,18 @@ import SaveIcon from '@material-ui/icons/Save'
 import DeleteIcon from '@material-ui/icons/Delete'
 import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+import TextField from '@material-ui/core/TextField'
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true)
   return (
     <FormControlLabel
-      control={<Checkbox
+      control={< Checkbox
         checked={checked}
         // make the checkbox a save icon when unchecked
-        icon={<SaveIcon />}
+        icon={< SaveIcon />}
         // make the checkbox a color icon when checked
-        checkedIcon={<SaveIcon color="secondary" />}
+        checkedIcon={< SaveIcon color="secondary" />}
 
         onChange={(e) => setChecked(e.target.checked)}
         color="secondary"
@@ -36,6 +37,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+          variant="outlined"
+          color="secondary"
+          type="email"
+          label="Email"
+          placeholder="test@test.com"
+        />
         <CheckboxExample />
         <ButtonGroup color="primary">
 
