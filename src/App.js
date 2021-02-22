@@ -9,7 +9,8 @@ import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import TextField from '@material-ui/core/TextField'
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { green, orange } from '@material-ui/core/colors'
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +19,17 @@ const useStyles = makeStyles({
     borderRadius: 15,
     color: 'white',
     padding: '0 30px'
+  }
+})
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+    secondary: {
+      main: orange[500],
+    }
   }
 })
 
@@ -52,46 +64,49 @@ function CheckboxExample() {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonStyled />
-        <TextField
-          variant="outlined"
-          color="secondary"
-          type="email"
-          label="Email"
-          placeholder="test@test.com"
-        />
-        <CheckboxExample />
-        <ButtonGroup color="primary">
+    <ThemeProvider theme={theme}>
 
-          <Button
-            startIcon={<SaveIcon />}
-            // endIcon={<SaveIcon />}
-            // onClick={() => alert('hello')}
-            // size="large"
-            // style={{fontSize: 48}}
-            href='#'
-            variant="contained"
-            color="primary"
-          >
-            Save
-        </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            size="large"
+      <div className="App">
+        <header className="App-header">
+          <ButtonStyled />
+          <TextField
+            variant="outlined"
             color="secondary"
-            variant="contained"
+            type="email"
+            label="Email"
+            placeholder="test@test.com"
+          />
+          <CheckboxExample />
+          <ButtonGroup color="primary">
 
-          >
-            Discard
+            <Button
+              startIcon={<SaveIcon />}
+              // endIcon={<SaveIcon />}
+              // onClick={() => alert('hello')}
+              // size="large"
+              // style={{fontSize: 48}}
+              href='#'
+              variant="contained"
+              color="primary"
+            >
+              Save
         </Button>
-        </ButtonGroup>
+            <Button
+              startIcon={<DeleteIcon />}
+              size="large"
+              color="secondary"
+              variant="contained"
+
+            >
+              Discard
+        </Button>
+          </ButtonGroup>
 
 
 
-      </header>
-    </div>
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
